@@ -1,0 +1,34 @@
+body{
+    background-color:red
+
+}
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    font-weight: bolder;
+}
+h4{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: unset;
+    font-weight: lighter;
+}
+#camera{
+    height:400px;
+    width: 500px;
+    border-color: black;
+}
+img{
+    width:200px;
+    height: 200px;
+    border-radius: 0px;
+    padding-top: 0%;
+    box-shadow: inset;
+
+}
+img:hover{
+    width: 250px;
+    height: 250px;
+    border-radius: 55px;
+    padding-top: 10px;
+    box-shadow: 10px;
+}
