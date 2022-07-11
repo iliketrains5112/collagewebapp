@@ -1,6 +1,14 @@
 var SpeechRecognition = window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
 
+Webcam.set({
+    width:360,
+     height:250,
+     image_format:'png',
+     png_quality:90
+});
+camera=document.getElementById("camera");
+
 function start(){
     console.log("this is start button")
 document.getElementById("textbox").innerHTML="";
@@ -12,9 +20,9 @@ recognition.onresult=function(event){
     var content=event.results[0][0].transcript;
     document.getElementById("textbox").innerHTML=content;
     if(content=="take my selfie"){
+        Webcam.attach(camera);
         speak();
     }
-Webcam.attach(camera);
 }
 function speak(){
     var synth=window.speechSynthesis;
@@ -30,23 +38,18 @@ setTimeout(
 setTimeout(
     function(){
         take_snapshot2();
-    },5000
+        save()
+    },10000
 );
 setTimeout(
     function(){
         take_snapshot3();
-    },5000
+        save
+    },15000
 );
 
 
 }
-Webcam.set({
-    width:360,
-     height:250,
-     image_format:'png',
-     png_quality:90
-});
-camera=document.getElementById("camera");
 
 function take_snapshot1(){
     Webcam.snap(function(data_uri){
